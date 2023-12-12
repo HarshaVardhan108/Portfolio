@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  
+
   color: #272829;
   /* user-select: none; */
 }
@@ -24,7 +24,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -95,7 +100,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
 }
 
-#header .profile h1 a, #header .profile h1 a:hover {
+#header .profile h1 a,
+#header .profile h1 a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -129,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   #header {
     left: -300px;
   }
+
   #main {
     margin-left: 0;
   }
@@ -137,6 +144,111 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+/* .sidenav {
+  background-color: rgb(215, 215, 54);
+  width: 15vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+
+}
+
+.content {
+  margin-left: 15vw;
+}
+
+nav {
+  float: left;
+  position: relative;
+  top: 40px;
+  left: 0px;
+  background: transparent;
+}
+
+nav ul {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0rem;
+}
+
+ul li .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: #fff;
+}
+
+nav ul li {
+  position: relative;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+  background: #b80909;
+  text-transform: uppercase;
+  transition: all .4s ease-out;
+}
+
+nav ul li>div {
+  display: block;
+  padding: 25px 0;
+  background: transparent;
+}
+
+nav ul li:after {
+  position: absolute;
+  background: crimson;
+  color: #fff;
+  top: 0;
+  left: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 100%;
+  opacity: .5;
+  transform: perspective(500px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition: all .4s ease-out;
+}
+
+nav ul li:nth-child(1):after {
+  content: "Home";
+}
+
+nav ul li:nth-child(2):after {
+  content: "About";
+}
+
+nav ul li:nth-child(3):after {
+  content: "Contact";
+  
+}
+
+nav ul li:nth-child(4):after {
+  content: "Connect";
+}
+
+nav ul li:nth-child(5):after {
+  content: "Setting";
+}
+
+nav ul li:hover {
+  transform: translateX(-100px);
+}
+
+nav ul li:hover:after {
+  opacity: 1;
+  transform: perspective(500px) rotateY(0deg) scale(1);
+} */
+
 /* Desktop Navigation */
 .nav-menu {
   padding: 30px 0 0 0;
@@ -269,6 +381,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
     line-height: 36px;
   }
+
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
@@ -530,7 +643,8 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
   color: #149ddd;
 }
 
@@ -583,7 +697,7 @@ section {
   background: rgba(20, 157, 221, 0.95);
 }
 
-.portfolio .portfolio-wrap .portfolio-links a + a {
+.portfolio .portfolio-wrap .portfolio-links a+a {
   border-left: 1px solid #37b3ed;
 }
 
@@ -647,7 +761,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -748,7 +862,8 @@ section {
   margin: 0;
 }
 
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
   color: #c3e8fa;
   font-size: 26px;
 }
@@ -877,7 +992,9 @@ section {
   color: #fff;
 }
 
-.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
   background: #149ddd;
   color: #fff;
 }
@@ -910,7 +1027,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -951,7 +1068,8 @@ section {
   padding-bottom: 8px;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input,
+.contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -982,6 +1100,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -991,6 +1110,7 @@ section {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -1018,11 +1138,11 @@ section {
   font-size: 15px;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #0e2442;
@@ -1033,9 +1153,11 @@ section {
   .breadcrumbs .d-flex {
     display: block !important;
   }
+
   .breadcrumbs ol {
     display: block;
   }
+
   .breadcrumbs ol li {
     display: inline-block;
   }
@@ -1075,15 +1197,17 @@ section {
   }
 }
 
-img.rounded-circle{
-   animation: pulse 1s infinite;
-   border-radius: 50%;
+img.rounded-circle {
+  animation: pulse 1s infinite;
+  border-radius: 50%;
 }
+
 @keyframes pulse {
-  from{
+  from {
     box-shadow: 0 0 0 0 rgb(16, 160, 233);
   }
- to{
-   box-shadow: 0 0 100px 0 rgb(15, 113, 162);
- } 
+
+  to {
+    box-shadow: 0 0 100px 0 rgb(15, 113, 162);
+  }
 }

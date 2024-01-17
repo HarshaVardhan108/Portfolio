@@ -37,11 +37,11 @@
 </head>
 
 <body>
-  <audio autoplay loop>
+  <!-- <audio autoplay loop>
     <source src="horse.ogg" type="audio/ogg">
     <source src="./assets/img/1 AM Study Session   lofi hip hopchill beats.mp3" type="audio/mpeg">
 
-  </audio>
+  </audio> -->
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -477,7 +477,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form name="contact" method="POST" role="form" data-netlify="true" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>

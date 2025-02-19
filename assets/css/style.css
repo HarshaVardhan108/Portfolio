@@ -82,7 +82,7 @@ h1{
 #header .profile img {
   margin: 15px auto;
   display: block;
-  width: 120px;
+  width: 100px;
   border: 8px solid #2c2f3f;
 }
 
@@ -614,13 +614,13 @@ section {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Services
+# projects
 --------------------------------------------------------------*/
-.services .icon-box {
+.projects .icon-box {
   margin-bottom: 20px;
 }
 
-.services .icon {
+.projects .icon {
   float: left;
   display: flex;
   align-items: center;
@@ -633,36 +633,36 @@ section {
   border: 1px solid #149ddd;
 }
 
-.services .icon i {
+.projects .icon i {
   color: #fff;
   font-size: 24px;
   line-height: 0;
 }
 
-.services .icon-box:hover .icon {
+.projects .icon-box:hover .icon {
   background: #fff;
 }
 
-.services .icon-box:hover .icon i {
+.projects .icon-box:hover .icon i {
   color: #149ddd;
 }
 
-.services .title {
+.projects .title {
   margin-left: 80px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-.services .title a {
+.projects .title a {
   color: #343a40;
 }
 
-.services .title a:hover {
+.projects .title a:hover {
   color: #149ddd;
 }
 
-.services .description {
+.projects .description {
   margin-left: 80px;
   line-height: 24px;
   font-size: 14px;

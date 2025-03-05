@@ -1,8 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif; /* Best portfolio font */
+  /* font-family: 'Roboto Slab', serif; */
   color: #272829;
   /* user-select: none; */
 }
@@ -27,7 +28,7 @@ p{
   font-family: 'Ysabeau Office', sans-serif;
 }
 h1{
-  font-family: 'Anton', sans-serif !important;
+  /* font-family: 'Anton', sans-serif !important; */
 }
 /*--------------------------------------------------------------
 # Back to top button
@@ -322,7 +323,7 @@ nav ul li:hover:after {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/progile-bg-img.jpg") top center;
+  background: url("../img/beautiful_flat-style_logo_desi.jpeg") top center;
   background-blend-mode: screen;
   background-size: cover;
 }
@@ -512,7 +513,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;

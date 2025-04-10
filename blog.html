@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .nav {
+            background: #333;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav a:hover {
+            background: #555;
+        }
+
+        .blog-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .blog-post {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0;
+            transition: transform 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-description {
+            margin: 10px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .read-more:hover {
+            background: #555;
+        }
+
+        @media (max-width: 768px) {
+            .blog-post {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+    <div class="blog-container">
+        <div class="blog-post">
+            <img src="/assets/img/ai tools.jfif" alt="AI in Software Development" class="blog-image">
+            <h2 class="blog-title">How AI Tools Benefit Software Development</h2>
+            <p class="blog-description">Artificial Intelligence has revolutionized software development with tools like
+                GitHub Copilot and ChatGPT, transforming how developers write code and solve problems.</p>
+            <a href="blog-ai.html" class="read-more">Read More</a>
+        </div>
+
+        <div class="blog-post">
+            <img src="/assets/img/frontend.png" alt="Frontend Web Development" class="blog-image">
+            <h2 class="blog-title">Creating a Website Using Frontend Technologies</h2>
+            <p class="blog-description">Learn how to build modern websites using HTML5, CSS3, JavaScript, and responsive
+                design principles for optimal user experience.</p>
+            <a href="blog-frontend.html" class="read-more">Read More</a>
+        </div>
+
+        <div class="blog-post">
+            <img src="/assets/img/web3.jfif" alt="Web3 and Blockchain" class="blog-image">
+            <h2 class="blog-title">Web3 and Blockchain: The Future of the Internet</h2>
+            <p class="blog-description">Explore how Web3 and blockchain technology are reshaping the digital landscape
+                with decentralized applications and smart contracts.</p>
+            <a href="blog-web3.html" class="read-more">Read More</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -2,10 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+/*--------------------------------------------------------------
+# Global Styles
+--------------------------------------------------------------*/
+:root {
+  /* Light theme variables */
+  --bg-primary: #f5f8fd;
+  --bg-secondary: #fff;
+  --text-primary: #272829;
+  --text-secondary: #45505b;
+  --accent-color: #149ddd;
+  --border-color: #ddd;
+  --section-bg: #f5f8fd;
+  --card-bg: #fff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme variables */
+  --bg-primary: #0a192f;
+  --bg-secondary: #112240;
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent-color: #64ffda;
+  --border-color: #233554;
+  --section-bg: #112240;
+  --card-bg: rgba(2, 12, 27, 0.7);
+}
+
 body {
   font-family: "Montserrat", sans-serif; /* Best portfolio font */
   color: #272829;
   user-select: none;
+  background-color: var(--bg-primary);
 }
 
 a {
@@ -329,10 +358,14 @@ nav ul li:hover:after {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/beautiful_flat-style_logo_desi.jfif") top center;
+    background: url("../img/beautiful_flat-style_logo_desi.jfif") top center;
   background-blend-mode: screen;
   background-size: cover;
+
+  position: relative;
+  overflow: hidden;
 }
+
 
 #hero:before {
   content: "";
@@ -398,10 +431,11 @@ nav ul li:hover:after {
 section {
   padding: 60px 0;
   overflow: hidden;
+  background-color: var(--bg-primary);
 }
 
 .section-bg {
-  background: #f5f8fd;
+  background-color: var(--section-bg);
 }
 
 .section-title {
@@ -430,6 +464,7 @@ section {
 
 .section-title p {
   margin-bottom: 0;
+  color: var(--text-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -499,6 +534,7 @@ section {
   margin-bottom: 20px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  border-left: 2px solid var(--accent-color);
 }
 
 .about .info-item:hover {
@@ -613,38 +649,89 @@ section {
 /*--------------------------------------------------------------
 # skills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills {
+  background: #0a192f;
+  padding: 60px 0;
+  color: #8892b0;
 }
 
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
+.skills .section-title h2 {
+  color: #ccd6f6;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills .skill-subtitle {
+  text-align: center;
+  color: #8892b0;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.skills .skill-category {
+  margin-bottom: 30px;
+}
+
+.skills .skill-box {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 10px;
+  min-height: 320px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.skills .skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(2, 12, 27, 0.5);
+  border-color: #64ffda;
+}
+
+.skills .skill-icon {
+  font-size: 3rem;
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills .skill-icon i {
+  filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.3));
+}
+
+.skills .skill-box h3 {
+  font-size: 1.5rem;
+  color: #ccd6f6;
+  margin-bottom: 1.5rem;
+  text-align: center;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skills .skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
+.skills .skill-list li {
+  color: #8892b0;
+  padding: 8px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
+.skills .skill-list li:hover {
+  color: #64ffda;
+  transform: translateX(5px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .skills .skill-box {
+    min-height: auto;
+    margin-bottom: 30px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -655,13 +742,13 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--text-primary);
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid var(--accent-color);
   position: relative;
 }
 
@@ -1102,10 +1189,11 @@ section {
 
 .contact .info {
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
 }
 
 .contact .info i {
@@ -1316,4 +1404,25 @@ img.rounded-circle {
   to {
     box-shadow: 0 0 100px 0 rgb(15, 113, 162);
   }
+}
+
+/*--------------------------------------------------------------
+# Theme Styles
+--------------------------------------------------------------*/
+#theme-toggle {
+  padding: 8px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+#theme-toggle:hover {
+  background: var(--accent-color);
+  color: var(--bg-primary);
+  border-color: var(--accent-color);
 }

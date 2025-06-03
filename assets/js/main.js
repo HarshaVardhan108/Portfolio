@@ -267,3 +267,21 @@ window.addEventListener("load", () => {
     element.textContent = year.getFullYear();
   });
 });
+
+//Function to handle Dark and light theme
+function toggleTheme() {
+  const body = document.body;
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (body.classList.contains("dark-theme")) {
+    body.classList.remove("dark-theme");
+    body.color = "#000";
+    body.backgroundColor = "#fff";
+    themeToggle.innerHTML = "<span class='bi bi-moon-stars'></span>";
+  } else {
+    body.classList.add("dark-theme");
+    body.color = "#fff";
+    body.backgroundColor = "#000";
+    themeToggle.innerHTML = "<span class='bi bi-sun'></span>";
+  }
+}

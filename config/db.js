@@ -1,20 +1,28 @@
-import mysql from 'mysql2/promise';
-import dotenv from 'dotenv';
+// Import required modules
+import mysql from 'mysql2/promise';  // MySQL database driver
+import dotenv from 'dotenv';          // Environment variables loader
 
-dotenv.config();
+dotenv.config();  // Load environment variables from .env file
 
+// Database configuration
+// Uses environment variables with fallback values
 const dbConfig = {
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'portfolio_contact_form',
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  host: process.env.DB_HOST || 'localhost',  // Database host
+  user: process.env.DB_USER || 'root',       // Database user
+  password: process.env.DB_PASSWORD || '',   // Database password
+  database: process.env.DB_NAME || 'portfolio_contact_form',  // Database name
+  waitForConnections: true,                  // Wait for available connections
+  connectionLimit: 10,                       // Maximum number of connections
+  queueLimit: 0                             // No limit on queued connections
 };
 
+// Create a connection pool for database operations
 const pool = mysql.createPool(dbConfig);
 
+// Execute a database query with parameters
+// @param {string} sql - SQL query string
+// @param {Array} params - Parameters to be used in query
+// @returns {Promise} - Promise that resolves with query results
 export async function query(sql, params) {
   try {
     const [results] = await pool.execute(sql, params);

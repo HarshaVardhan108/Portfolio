@@ -29,6 +29,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 
   <!-- CDN JS Files -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -41,12 +42,6 @@
 </head>
 
 <body>
-  <!-- <audio autoplay loop>
-    <source src="horse.ogg" type="audio/ogg">
-    <source src="./assets/img/1 AM Study Session   lofi hip hopchill beats.mp3" type="audio/mpeg">
-
-  </audio> -->
-
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -60,12 +55,12 @@
         <div class="social-links mt-3 text-center">
           <a href="https://github.com/HarshaVardhan108?tab=repositories" class="github" target="_blank"
             title="Github"><i class='bx bxl-github bx-flashing-hover' style='color:#c21919'></i></a>
-          <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
           <a href="https://www.linkedin.com/in/daruri-harsha-vardhan-naidu-4602b2206" class="linkedin"
             title="Linkedin"><i class='bx bxl-linkedin-square bx-flashing-hover' style='color:#046599'></i></a>
+          <a href="bucketList.html" class="bucketList" title="BucketList"><i
+              class="bx bx-list-square bx-flashing-hover " style='color:#2fd4bc'></i></a>
           <!-- <button id="theme-toggle" class="btn btn-outline-light" onclick="toggleTheme()"><i
               class='bx bx-moon'></i></button> -->
-
         </div>
       </div>
       <nav id="navbar" class="nav-menu navbar">
@@ -76,7 +71,7 @@
           </li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank bx-tada-hover"></i>
               <span>Resume</span></a></li>
-          <li><a href="blog.html" class="nav-link scrollto"><i class='bx bxs-notepad'></i></i>
+          <li><a href="/blogs/blog.html" class="nav-link scrollto"><i class='bx bxs-notepad'></i></i>
               <span>Blogs</span></a></li>
           <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-server bx-tada-hover"></i>
               <span>Projects</span></a></li>
@@ -93,7 +88,7 @@
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-   
+
     <div class="hero-container" data-aos="fade-in">
       <h1>Harsha Vardhan</h1>
       <p>I'm <span class="typed" data-typed-items="Programmer, Web Developer, FullStack Developer "></span></p>
@@ -513,7 +508,8 @@
                 <h4 class="card-title"><a href="https://valueeducation.netlify.app/" target="_blank">Value Education
                     Contest</a>
                 </h4>
-                <p class="card-text">A website for the Gita Value Education Contest at Schools across Andhra Pradesh.</p>
+                <p class="card-text">A website for the Gita Value Education Contest at Schools across Andhra Pradesh.
+                </p>
                 <div class="tech-stack">
                   <span class="badge bg-warning text-dark">HTML</span>
                   <span class="badge bg-info">CSS</span>
@@ -534,7 +530,8 @@
             <div class="card h-100">
               <img src="assets/img/Pat_test.jpeg" class="card-img-top" alt="Value Education Contest">
               <div class="card-body">
-                <h4 class="card-title"><a href="https://personality-assessment-quiz.netlify.app/" target="_blank">Student Personality Assessment Test</a>
+                <h4 class="card-title"><a href="https://personality-assessment-quiz.netlify.app/"
+                    target="_blank">Student Personality Assessment Test</a>
                 </h4>
                 <p class="card-text">A web application designed to assess the personality traits of students.</p>
                 <div class="tech-stack">
@@ -669,36 +666,32 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="" method="post" class="php-email-form">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="php-email-form">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden" style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
-                  <div class="validate"></div>
+                  <!-- <div class="validate"></div> -->
                 </div>
                 <div class="form-group col-md-6">
                   <label for="email">Your Email</label>
                   <input type="email" class="form-control" name="email" id="email" required>
-                  <div class="validate"></div>
+                  <!-- <div class="validate"></div> -->
                 </div>
               </div>
               <div class="form-group">
                 <label for="subject">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
-                <div class="validate"></div>
+                <!-- <div class="validate"></div> -->
               </div>
               <div class="form-group">
                 <label for="message">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="my-3">
-                <!-- Loading message -->
-                <div class="loading">Loading</div>
-                <!-- Error message -->
-                <div class="error-message">Currently Working on this feature. Please try again later.</div>
-                <!-- Success message -->
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <!-- <div class="validate"></div> -->
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
@@ -714,31 +707,23 @@
           &copy; Copyright <span class="year"></span> <strong><span>Made by Harsha Vardhan </span></strong>
         </div>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <span class="year"></span> <strong><span>Made by Harsha Vardhan </span></strong>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+       
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script> <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/contact.js"></script>
-  <!-- <script src="assets/js/theme.js"></script> -->
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/typed.js/typed.min.js"></script>
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script> <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/contact.js"></script>
+        <!-- <script src="assets/js/theme.js"></script> -->
 
 </body>
 

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bucket List</title>
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #a21caf, #f43f5e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white min-h-screen">
+    <nav class="flex items-center justify-start p-6 gap-6">
+      <a href="index.html" class="text-gray-300 hover:text-white transition"
+        >Home</a
+      >
+    </nav>
+    <main class="max-w-2xl mx-auto pt-8 px-4">
+      <div class="text-center mb-12">
+        <div class="uppercase tracking-widest text-gray-400 mb-2">
+          The Bucket List
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">The Things I'll Do</h1>
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4 italic">
+          Before I'm Done
+        </h2>
+      </div>
+      <ul class="space-y-8">
+        <li class="flex items-start gap-4">
+          <input
+            type="checkbox"
+            disabled
+            class="mt-1 w-6 h-6 bg-gray-800 border-gray-600 rounded"
+          />
+          <div>
+            <span class="text-xl">Skydiving</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <input
+            type="checkbox"
+            checked
+            disabled
+            class="mt-1 w-6 h-6 bg-gray-800 border-gray-600 rounded"
+          />
+          <div>
+            <span class="text-xl font-bold">Create portfolio website</span>
+            <div class="text-gray-400 text-sm">
+              August 2024,
+              <a
+                href="https://harshavardhannaidu.netlify.app/"
+                class="underline text-pink-400 hover:text-pink-600"
+                >https://harshavardhannaidu.netlify.app/</a
+              >
+            </div>
+            <div class="flex gap-2 mt-2"></div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <input
+            type="checkbox"
+            disabled
+            class="mt-1 w-6 h-6 bg-gray-800 border-gray-600 rounded"
+          />
+          <div>
+            <span class="text-xl">Do 10K marathon</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <input
+            type="checkbox"
+            checked
+            disabled
+            class="mt-1 w-6 h-6 bg-gray-800 border-gray-600 rounded"
+          />
+          <div>
+            <span class="text-xl font-bold">First OpenSource contribution</span>
+            <div class="text-gray-400 text-sm">December 2024</div>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <input
+            type="checkbox"
+            disabled
+            class="mt-1 w-6 h-6 bg-gray-800 border-gray-600 rounded"
+          />
+          <div>
+            <span class="text-xl">Solo travel to another country</span>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+# Deny web access to stored contact messages
+Require all denied

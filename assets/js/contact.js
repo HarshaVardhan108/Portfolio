@@ -1,52 +1,63 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const form = document.querySelector(".php-email-form");
-//   const loadingDiv = form.querySelector(".loading");
-//   const errorDiv = form.querySelector(".error-message");
-//   const sentDiv = form.querySelector(".sent-message");
-//   const submitButton = form.querySelector("button[type='submit']");
+/**
+ * Contact form → PHP API
+ */
+const form = document.getElementById("contact-form");
+if (!form) {
+  // page without contact form
+} else {
+  const status = form.querySelector(".form-status");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const label = submitBtn?.querySelector(".btn-label");
+  const loading = submitBtn?.querySelector(".btn-loading");
 
-//   form.addEventListener("submit", async function (e) {
-//     e.preventDefault();
+  const setBusy = (busy) => {
+    if (!submitBtn) return;
+    submitBtn.disabled = busy;
+    if (label) label.hidden = busy;
+    if (loading) loading.hidden = !busy;
+  };
 
-//     // Disable submit button and show loading
-//     submitButton.disabled = true;
-//     loadingDiv.style.display = "block";
-//     errorDiv.style.display = "none";
-//     sentDiv.style.display = "none";
+  const showStatus = (ok, message) => {
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = message;
+    status.classList.toggle("is-success", ok);
+    status.classList.toggle("is-error", !ok);
+  };
 
-//     try {
-//       const formData = {
-//         name: form.querySelector('input[name="name"]').value.trim(),
-//         email: form.querySelector('input[name="email"]').value.trim(),
-//         subject: form.querySelector('input[name="subject"]').value.trim() || "No Subject",
-//         message: form.querySelector('textarea[name="message"]').value.trim()
-//       };
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setBusy(true);
+    if (status) status.hidden = true;
 
-//       const response = await fetch("http://localhost:3000/api/contact", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(formData),
-//       });
+    const payload = {
+      csrf_token: form.querySelector('[name="csrf_token"]')?.value || "",
+      website: form.querySelector('[name="website"]')?.value || "",
+      name: form.querySelector('[name="name"]')?.value?.trim() || "",
+      email: form.querySelector('[name="email"]')?.value?.trim() || "",
+      subject: form.querySelector('[name="subject"]')?.value?.trim() || "",
+      message: form.querySelector('[name="message"]')?.value?.trim() || "",
+    };
 
-//       const data = await response.json();
+    try {
+      const res = await fetch("api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+        credentials: "same-origin",
+      });
 
-//       if (response.ok) {
-//         // Show success message and reset form
-//         loadingDiv.style.display = "none";
-//         sentDiv.style.display = "block";
-//         form.reset();
-//         submitButton.disabled = false;
-//       } else {
-//         throw new Error(data.message || "Failed to send message");
-//       }
-//     } catch (error) {
-//       // Show error message and re-enable submit button
-//       loadingDiv.style.display = "none";
-//       errorDiv.textContent = error.message;
-//       errorDiv.style.display = "block";
-//       submitButton.disabled = false;
-//     }
-//   });
-// });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        throw new Error(data.message || "Could not send your message. Please try again.");
+      }
+
+      showStatus(true, data.message || "Message sent. Thank you!");
+      form.reset();
+    } catch (err) {
+      showStatus(false, err.message || "Something went wrong.");
+    } finally {
+      setBusy(false);
+    }
+  });
+}
